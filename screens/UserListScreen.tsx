@@ -4,7 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage'; // Im usin
 
 const UserListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [users, setUsers] = useState<any[]>([]);
-
+  // Fetches registered users from my async storage
+  // Theres also an error handler
   useEffect(() => {
     const fetchUsers = async () => {
       try {
