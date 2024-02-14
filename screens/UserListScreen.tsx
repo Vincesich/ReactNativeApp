@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage'; // Im using async storage to store the info of users whove registered
 
 const UserListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [users, setUsers] = useState<any[]>([]);
@@ -41,7 +41,7 @@ const UserListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     </View>
   );
 };
-
+     // My styling for this page 
 const styles = StyleSheet.create({
   container: {
     flex: 1,

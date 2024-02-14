@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { useForm, Controller, SubmitHandler } from 'react-hook-form'; // For my react hook form
+import AsyncStorage from '@react-native-async-storage/async-storage'; // This is storing my users data
+// These are the feilds ill be having users fill in to register
 type FormData = {
   firstName: string;
   lastName: string;
@@ -74,6 +74,7 @@ const RegistrationScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       reset();
 
       // Navigate to dashboard with user's name
+      // Youll see the coresponding fuction in my dashboard screen.tsx
       navigation.navigate('Dashboard', { firstName: formData.firstName });
 
       // Optionally, provide feedback to the user about successful registration
@@ -84,7 +85,7 @@ const RegistrationScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       Alert.alert('Error', 'Failed to register. Please try again.');
     }
   };
-
+   // Here i put all the fields inside a controller
   return (
     <View style={styles.container}>
       <Text>Registration</Text>
@@ -204,7 +205,7 @@ const RegistrationScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     </View>
   );
 };
-
+   // Styling 
 const styles = StyleSheet.create({
   container: {
     flex: 1,

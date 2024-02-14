@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage'; // refers to the async storage to check if the user exists
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+    // This handles the login after the button at the button is pressed
   const handleLogin = async () => {
     // Retrieve user data from AsyncStorage
     const userData = await AsyncStorage.getItem('users');
@@ -49,7 +49,7 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
     </View>
   );
 };
-
+     // My styling for this tsx
 const styles = StyleSheet.create({
   container: {
     flex: 1,
