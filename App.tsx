@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'; // For my stack navigator
+import { Provider } from 'react-redux'; // Import Provider from react-redux
+import { store } from './store/store'; // Import your store redux
 import RegistrationScreen from './screens/registration'; // My registration screen
 import DashboardScreen from './screens/DashboardScreen'; //My dashboard screen
 import UserListScreen from './screens/UserListScreen'; // My Userlist screen
@@ -11,6 +13,7 @@ const Stack = createStackNavigator();
 // This is where all my screens are declared in my navigation container (use <Stack.Screen>) everytime i add one 
 export default function App(): JSX.Element {
   return (
+  <Provider store={store}> {/* Wrap your App with Provider */}
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
@@ -36,6 +39,7 @@ export default function App(): JSX.Element {
         />
       </Stack.Navigator>
     </NavigationContainer>
+  </Provider>
   );
 }
 // This what is displayed on the home screen once you open the app
