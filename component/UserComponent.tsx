@@ -1,12 +1,16 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import { fetchUserById } from '../store/userApi'; // Adjust the path as per your folder structure
+import { fetchUserById } from '../store/userApi'; 
 
 interface User {
   id: number;
   name: string;
   email: string;
-  // Add more properties as needed
+  phoneNumber: string;
+  city: string;
+  password: string;
+  confirmPassword: string;
+  // Here i can add more properties as needed
 }
 
 const UserComponent: React.FC<{ userId: string }> = ({ userId }) => {
@@ -23,6 +27,7 @@ const UserComponent: React.FC<{ userId: string }> = ({ userId }) => {
       <p>ID: {user.id}</p>
       <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
+      <p>phoneNumber: {user.phoneNumber}</p>
       {/* Add more user properties here */}
     </div>
   );
