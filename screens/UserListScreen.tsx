@@ -20,7 +20,8 @@ const UserListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
     fetchUsers();
   }, []);
-
+    // Displays the registered users with a flat list
+    // The button onPress returns you to the dashboardscreen
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Registered Users</Text>
