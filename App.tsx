@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 // This is where all my screens are declared in my navigation container (use <Stack.Screen>) everytime i add one 
 export default function App(): JSX.Element {
   return (
-  <Provider store={store}> {/* Wrap your App with Provider */}
+  <Provider store={store}> 
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen

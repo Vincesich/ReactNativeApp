@@ -2,10 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // Im using async storage to store the info of users whove registered
 
+
+
 const UserListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [users, setUsers] = useState<any[]>([]);
   // Fetches registered users from my async storage
   // Theres also an error handler
+
+  
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
