@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // Im using async storage to store the info of users whove registered
-
+import { useDispatch, useSelector } from 'react-redux'; // Import useDispatch from react-redux
+import { RootState } from '../store/store'; // Assuming you have a RootState type defined
 
 
 const UserListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [users, setUsers] = useState<any[]>([]);
+  const dispatch = useDispatch(); // Initialize useDispatch
+  const registeredUsers = useSelector((state: RootState) => state.user); // Select registered users from Redux store
+
   // Fetches registered users from my async storage
   // Theres also an error handler
 
@@ -18,6 +22,10 @@ const UserListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         if (userData) {
           const parsedUsers = JSON.parse(userData);
           setUsers(parsedUsers);
+          // Dispatch users to Redux store
+          dispatch({ type: 'SET_USERS', payload: parsedUsers });
+          // Log users using dispatch
+          dispatch({ type: 'LOG_USERS', payload: parsedUsers });
         }
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -25,9 +33,14 @@ const UserListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     };
 
     fetchUsers();
-  }, []);
+  }, [dispatch]); // Include dispatch as a dependency
     // Displays the registered users with a flat list
     // The button onPress returns you to the dashboardscreen
+    useEffect(() => {
+      // Log registered users when component mounts
+      console.log('Registered Users:', registeredUsers);
+    }, [registeredUsers]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Registered Users</Text>
