@@ -74,6 +74,20 @@ Displays information about the app.
 
 The `UserComponent.tsx` file is a React component responsible for fetching and displaying user data based on a given user ID. It utilizes the `useQuery` hook from `react-query` to fetch user data asynchronously from an API endpoint defined in `userApi.ts`. Once the data is fetched, it renders the user's information such as ID, name, email, and phone number.
 
+## Store Configuration (store.ts)
+
+The `store.ts` file configures the Redux store using Redux Toolkit's `configureStore` function. It combines reducers using the reducer configuration option and exports the RootState type.
+
+## User API (userApi.ts)
+
+The `userApi.ts` file contains functions for fetching user data from a backend server. The `fetchUserById` function makes a fetch request to the backend server to retrieve user data based on a given user ID.
+
+## User Slice (userSlice.ts)
+
+The `userSlice.ts` file defines a Redux slice for managing user state. It includes actions for fetching user data asynchronously using Redux Toolkit's `createAsyncThunk` function. The slice also includes a reducer and selectors for accessing user data in the Redux store.
+
+## Built With
+
 ## Built With
 
 - [React Native](https://reactnative.dev/) - A JavaScript framework for building native mobile apps using React.
