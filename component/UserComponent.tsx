@@ -27,9 +27,9 @@ const UserComponent: React.FC<{ userId: string }> = ({ userId }) => {
       <p>ID: {user.id}</p>
       <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
-      <p>phoneNumber: {user.phoneNumber}</p>
-      {/* Add more user properties here */}
+      <p>phoneNumber: {user.phoneNumber}</p> 
     </div>
+    // add more user properties inside the div 
   );
 };
 
