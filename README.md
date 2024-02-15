@@ -5,6 +5,7 @@ This is a React Native application that provides a simple user registration and 
 ## Features
 
 - User registration and login functionalities.
+- Usage of a react hook form
 - Navigation using React Navigation.
 - State management using Redux Toolkit.
 - Fetching user data from an API.
@@ -78,7 +79,8 @@ Allows registered users to log in.
 
 ### Help
 
-Provides help information.
+The Help screen allows users to leave comments or feedback. It includes a form where users can input their comments and submit them. The form validation is handled using the `react-hook-form` library.
+
 
 ### About
 
