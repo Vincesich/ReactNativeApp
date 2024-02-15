@@ -1,7 +1,15 @@
 # React Native App
 
-This is a React Native application that 
+This is a React Native application that provides a simple user registration and login system with navigation functionalities and Redux state management.
 
+## Features
+
+- User registration and login functionalities.
+- Navigation using React Navigation.
+- State management using Redux Toolkit.
+- Fetching user data from an API.
+- Displaying a list of registered users.
+  
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -32,10 +40,42 @@ To run the app locally, follow these steps:
 - Press `a` to open the app in an Android emulator.
 - Press `i` to open the app in an iOS simulator.
 
+## Screens
+
+### Home
+
+The landing page of the app, providing options for user registration and login.
+
+### Registration
+
+Allows users to register for the app.
+
+### Dashboard
+
+Displays the user dashboard.
+
+### User List
+
+Shows a list of users.
+
+### Login
+
+Allows registered users to log in.
+
+### Help
+
+Provides help information.
+
+### About
+
+Displays information about the app.
+
 ## Built With
 
 - [React Native](https://reactnative.dev/) - A JavaScript framework for building native mobile apps using React.
 - [Expo](https://expo.dev/) - A framework and a platform for universal React applications.
+- [React Navigation](https://reactnavigation.org/) - Routing and navigation for React Native apps.
+- [Redux Toolkit](https://redux-toolkit.js.org/) - State management library for React applications.
 
 ## Contributing
 
