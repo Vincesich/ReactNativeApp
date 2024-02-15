@@ -8,6 +8,8 @@ import RegistrationScreen from './screens/registration';
 import DashboardScreen from './screens/DashboardScreen';
 import UserListScreen from './screens/UserListScreen';
 import LoginScreen from './screens/LoginScreen';
+import HelpScreen from './screens/HelpScreen'; 
+import AboutScreen from './screens/AboutScreen';
 
 const Stack = createStackNavigator();
 
@@ -40,6 +42,16 @@ export default function App() {
             name="LoginScreen"
             component={LoginScreen}
             options={{ title: 'Login' }}
+          />
+          <Stack.Screen
+            name="HelpScreen"
+            component={HelpScreen}
+            options={{ title: 'HelpScreen' }}
+          />
+          <Stack.Screen
+            name="AboutScreen"
+            component={AboutScreen}
+            options={{ title: 'AboutScreen' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
