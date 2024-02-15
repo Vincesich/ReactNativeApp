@@ -9,6 +9,20 @@ This is a React Native application that provides a simple user registration and 
 - State management using Redux Toolkit.
 - Fetching user data from an API.
 - Displaying a list of registered users.
+
+### Purpose
+
+The primary purpose of this project is to provide a practical example of developing a mobile application using React Native, suitable for both beginners and experienced developers. By exploring the codebase and following the setup instructions provided in this README, developers can gain insights into building similar applications and learn best practices for structuring React Native projects, handling navigation, managing state, and more.
+
+### Technologies Used
+
+- **React Native**: A JavaScript framework for building native mobile apps using React.
+- **Expo**: A framework and platform for universal React applications, providing tools for developing, building, and deploying React Native apps.
+- **React Navigation**: A routing and navigation library for React Native apps, enabling seamless navigation between screens and handling navigation logic.
+- **Redux Toolkit**: A comprehensive state management library for React applications, offering simplified setup and powerful features for managing application state.
+- **AsyncStorage**: A built-in React Native module for storing data locally on the device, useful for persisting user data across app sessions.
+- **React Query**: A data fetching library for React, offering tools for managing asynchronous data fetching and caching, used in conjunction with Redux Toolkit for fetching user data from an API.
+
   
 ## Getting Started
 
