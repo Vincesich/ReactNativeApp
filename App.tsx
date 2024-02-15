@@ -1,73 +1,88 @@
 import React from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack'; // For my stack navigator
-import { Provider } from 'react-redux'; // Import Provider from react-redux
-import { store } from './store/store'; // Import your store redux
-import RegistrationScreen from './screens/registration'; // My registration screen
-import DashboardScreen from './screens/DashboardScreen'; //My dashboard screen
-import UserListScreen from './screens/UserListScreen'; // My Userlist screen
-import LoginScreen from './screens/LoginScreen'; // Import the LoginScreen component
+import { createStackNavigator } from '@react-navigation/stack';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import RegistrationScreen from './screens/registration';
+import DashboardScreen from './screens/DashboardScreen';
+import UserListScreen from './screens/UserListScreen';
+import LoginScreen from './screens/LoginScreen';
 
 const Stack = createStackNavigator();
-// This is where all my screens are declared in my navigation container (use <Stack.Screen>) everytime i add one 
-export default function App(): JSX.Element {
+
+export default function App() {
   return (
-  <Provider store={store}> 
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: 'Home' }}
-        />
-        <Stack.Screen
-          name="Registration"
-          component={RegistrationScreen}
-          options={{ title: 'Registration' }}
-        />
-        <Stack.Screen
-          name="Dashboard"
-          component={DashboardScreen}
-          options={{ title: 'Dashboard' }}
-        />
-        <Stack.Screen name="UserList" 
-        component={UserListScreen} 
-        />
-        <Stack.Screen name="LoginScreen" 
-        component={LoginScreen} 
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  </Provider>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ title: 'Home' }}
+          />
+          <Stack.Screen
+            name="Registration"
+            component={RegistrationScreen}
+            options={{ title: 'Registration' }}
+          />
+          <Stack.Screen
+            name="Dashboard"
+            component={DashboardScreen}
+            options={{ title: 'Dashboard' }}
+          />
+          <Stack.Screen
+            name="UserList"
+            component={UserListScreen}
+            options={{ title: 'User List' }}
+          />
+          <Stack.Screen
+            name="LoginScreen"
+            component={LoginScreen}
+            options={{ title: 'Login' }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
-// This what is displayed on the home screen once you open the app
-// The first button onPress takes you to the Registration screen
-// The second one takes you to the login screen where returning users can stil login and go to the dashboard
-function HomeScreen({ navigation }: { navigation: any }) {
+
+function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Welcome to my simple react native application</Text>
-      <Button
-        title="Go to Registration"
-        onPress={() => navigation.navigate('Registration')}
-      />
-      {/* Button to navigate to the login screen */}
-      <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate('LoginScreen')}
-      />
+      <Text style={styles.welcomeText}>Welcome to My Simple React Native Application!</Text>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Register Here"
+          onPress={() => navigation.navigate('Registration')}
+        />
+        <Button
+          title="Login Here"
+          onPress={() => navigation.navigate('LoginScreen')}
+        />
+      </View>
     </View>
   );
 }
-// Styling
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  welcomeText: {
+    fontSize: 20,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  buttonContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
 });
+
 
 

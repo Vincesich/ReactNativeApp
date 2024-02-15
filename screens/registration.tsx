@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert, KeyboardAvoidingView } from 'react-native';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form'; // For my react hook form
 import AsyncStorage from '@react-native-async-storage/async-storage'; // This is storing my users data
 // These are the feilds ill be having users fill in to register
@@ -7,7 +7,7 @@ type FormData = {
   firstName: string;
   lastName: string;
   email: string;
-  phoneNumber: string;
+  phoneNumber: string;  
   city: string;
   password: string;
   confirmPassword: string;
@@ -87,7 +87,7 @@ const RegistrationScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   };
    // Here i put all the fields inside a controller
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
       <Text>Registration</Text>
       <Controller
         control={control}
@@ -202,7 +202,7 @@ const RegistrationScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         <Text key={index} style={styles.errorText}>{error.message}</Text>
       ))}
       <Button title="Register" onPress={handleSubmit(handleRegistration)} />
-    </View>
+    </KeyboardAvoidingView>
   );
 };
    // Styling 
