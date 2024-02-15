@@ -70,6 +70,10 @@ Provides help information.
 
 Displays information about the app.
 
+## UserComponent
+
+The `UserComponent.tsx` file is a React component responsible for fetching and displaying user data based on a given user ID. It utilizes the `useQuery` hook from `react-query` to fetch user data asynchronously from an API endpoint defined in `userApi.ts`. Once the data is fetched, it renders the user's information such as ID, name, email, and phone number.
+
 ## Built With
 
 - [React Native](https://reactnative.dev/) - A JavaScript framework for building native mobile apps using React.
