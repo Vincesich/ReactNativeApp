@@ -1,6 +1,6 @@
 # React Native App
 
-This is a React Native application that provides a simple user registration and login system with navigation functionalities and Redux state management.
+This is a React Native application that provides a simple user registration and login system with navigation functionalities and Redux state management as well as storing user data using AsyncStorage..
 
 ## Features
 
